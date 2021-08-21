@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post Model The model maintains the structure 1`] = `
+Post {
+  "body": "est rerum tempore vitae
+sequi sint nihil reprehenderit dolor beatae ea dolores neque
+fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis
+qui aperiam non debitis possimus qui neque nisi nulla",
+  "date": "01-02-2021",
+  "postId": undefined,
+  "title": "qui est esse",
+  "userId": 1,
+}
+`;
