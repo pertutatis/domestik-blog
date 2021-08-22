@@ -53,7 +53,7 @@ export default {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
   margin: 3%;
 
   @media (--min-tablet) {

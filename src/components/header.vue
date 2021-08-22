@@ -2,13 +2,13 @@
   <header class="header">
     <h1 class="header__brand">LOGO</h1>
     
-    <div class="burger">
-      <span clas="burger__line" />
-      <span clas="burger__line" />
-      <span clas="burger__line" />
+    <div class="burger" @click="toggleMenu">
+      <span class="burger__line" />
+      <span class="burger__line" />
+      <span class="burger__line" />
     </div>
 
-    <nav class="main-navigation">
+    <nav class="main-navigation" :class="{'main-navigation--open': showMenu}">
       <a class="main-navigation__anchor" href="#">Link 1</a>
       <a class="main-navigation__anchor" href="#">Link 2</a>
       <a class="main-navigation__anchor" href="#">Link 3</a>
@@ -22,8 +22,14 @@ export default {
   name: 'BlogHeader',
   data() {
     return {
+      showMenu: false
     }
-  }
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  },
 }
 </script>
 
@@ -33,6 +39,7 @@ export default {
 
 /* Header */
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +54,27 @@ export default {
 
 /* Navigation */
 .main-navigation {
-  display: none;
+  position: absolute;
+  top: 100%;
+  display: none; 
+  flex-direction: column;
+  text-align: right;
+  width: 100%;
+  padding: 10px 0 30px;
+  background: var(--color-white);
+  border-bottom: 2px solid var(--secondary-color);
+
+  @media (--min-tablet) {
+    position: relative;
+    display: block;
+    width: auto;
+    padding: 0;
+    border: none;
+  }
+}
+
+.main-navigation--open {
+  display: flex;
 
   @media (--min-tablet) {
     display: block;
@@ -77,7 +104,6 @@ export default {
 	display: block;
 	position: absolute;
 	background: var(--color-gray-dark);
-	transition: var(--main-transition);
 	transform-origin: 0px 100%;
 }
  
