@@ -1,6 +1,10 @@
 <template>
   <header class="header">
-    <h1 class="header__brand">LOGO</h1>
+    <h1 class="header__brand">
+      <router-link to="/">
+        LOGO
+      </router-link>
+    </h1>
     
     <div class="burger" @click="toggleMenu">
       <span class="burger__line" />
@@ -9,9 +13,9 @@
     </div>
 
     <nav class="main-navigation" :class="{'main-navigation--open': showMenu}">
-      <a class="main-navigation__anchor" href="#">Link 1</a>
-      <a class="main-navigation__anchor" href="#">Link 2</a>
-      <a class="main-navigation__anchor" href="#">Link 3</a>
+      <router-link to="/" class="main-navigation__anchor">Link 1</router-link>
+      <router-link to="/" class="main-navigation__anchor">Link 2</router-link>
+      <router-link to="/" class="main-navigation__anchor">Link 3</router-link>
     </nav>
   </header>
 </template>
@@ -50,6 +54,10 @@ export default {
   margin: 0;
   font-size: 40px;
   font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 /* Navigation */

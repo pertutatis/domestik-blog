@@ -1,6 +1,11 @@
 <template>
     <footer class="footer">
-      <h1 class="footer__brand">LOGO</h1>
+      <h1 class="footer__brand">
+        <router-link to="/">
+          LOGO
+        </router-link>
+      </h1>
+
       <nav class="footer__menu">
         <a class="footer__anchor" href="#">Facebook</a>
         <a class="footer__anchor" href="#">Twitter</a>
@@ -32,6 +37,10 @@ export default {
   margin: 0;
   font-size: 32px;
   font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .footer__anchor {

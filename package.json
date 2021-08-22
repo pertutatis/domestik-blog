@@ -1,25 +1,26 @@
 {
   "name": "@pertutatis/domestik-blog",
   "version": "0.0.0",
-  "description": "Vue blog",
-  "license": "MIT",
   "private": true,
+  "description": "Vue blog",
   "scripts": {
-    "prepare": "npm run build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "domestik-carousel": "^1.0.2",
     "vue": "^2.6.11",
+    "vue-router": "^3.5.2",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.2.4",
@@ -65,5 +66,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "license": "MIT"
 }
