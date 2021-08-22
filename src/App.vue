@@ -1,26 +1,30 @@
 <template>
   <div id="app">
-    <header>
-      <nav></nav>
-    </header>
-    <main>
-      <pre>
-        {{ post }}
-      </pre>
-      <article></article>
-      <aside></aside>
+    <BlogHeader />
+    <main class="layout">
+      <img :src="post.featuredImage" alt="" class="post__hero">
+      <BlogPost class="layout__content" :post="post"/>
+      <BlogAside />
     </main>
-    <footer>
-      <nav></nav>
-    </footer>
+    <BlogFooter />
   </div>
 </template>
 
 <script>
+import BlogHeader from './components/header.vue'
+import BlogAside from './components/aside.vue'
+import BlogFooter from './components/footer.vue'
+import BlogPost from './components/post.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'App',
+  components: {
+    BlogHeader,
+    BlogAside,
+    BlogFooter,
+    BlogPost
+  },
   data() {
     return {
     }
@@ -48,18 +52,95 @@ export default {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100vh;
-  overflow-y: hidden;
+body {
+  background-color: var(--background-color);
+  margin: 3%;
+
+  @media (--min-tablet) {
+    margin: 15px;
+  }
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--primary-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  background-color: var(--red);
+  color: var(--color-gray-dark);
+  padding: 15px;
+  background-color: var(--color-white);
+}
+
+h1 {
+    display: block;
+    font-size: 3em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a {
+  color: var(--color-back);
+  transition: var(--main-transition);
+
+  &:hover {
+    color: var(--color-gray-medium);
+  }
+}
+
+.layout {
+  @media (--min-desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: space-between;
+  }
+}
+
+.layout__content {
+  @media (--min-desktop) {
+    flex: 1 1 50%;
+  }
+}
+
+.layout__aside {
+  display: none;
+  padding-left: 40px;
+
+  @media (--min-desktop) {
+    display: block;
+    flex: 0 0 350px;
+  }
+}
+
+.post__hero {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 </style>
