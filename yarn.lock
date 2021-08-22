@@ -3919,6 +3919,14 @@ domelementtype@^2.0.1, domelementtype@^2.2.0:
   resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-2.2.0.tgz#9a0b6c2782ed6a1c7323d42267183df9bd8b1d57"
   integrity sha512-DtBMo82pv1dFtUmHyr48beiuq792Sxohr+8Hm9zoxklYPfa6n0Z3Byjj2IV7bmr2IyqClnqEQhfgHJJ5QF0R5A==
 
+domestik-carousel@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/domestik-carousel/-/domestik-carousel-1.0.0.tgz#497d9bbd2f985ff1a01840388315cc0eb94aa438"
+  integrity sha512-whWvX+uskl3cVFDLmwuiP7eYTA435u7UBmo3dVJJsSNzhY1D5MNDEVcDOHl9lq1vs8VW5KoP1GbMY5kYn2PaJw==
+  dependencies:
+    core-js "^3.6.5"
+    vue "^2.6.11"
+
 domexception@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"

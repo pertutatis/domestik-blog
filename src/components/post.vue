@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import DomestikCarousel from '@pertutatis/domestik-carousel/src/components/DomestikCarousel.vue'
+import DomestikCarousel from 'domestik-carousel'
 
 export default {
   name: 'BlogPost',
