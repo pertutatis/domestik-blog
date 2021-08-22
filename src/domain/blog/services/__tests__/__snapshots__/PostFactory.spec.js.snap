@@ -6,7 +6,17 @@ Post {
 sequi sint nihil reprehenderit dolor beatae ea dolores neque
 fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis
 qui aperiam non debitis possimus qui neque nisi nulla",
-  "date": "20-01-2021",
+  "date": "01-02-2021",
+  "featuredImage": "https://picsum.photos/900/506?image=1081",
+  "images": Array [
+    Object {
+      "img": "https://picsum.photos/900/506?image=1082",
+    },
+    Object {
+      "img": "https://picsum.photos/900/506?image=1083",
+    },
+  ],
+  "lead": "Lorem ipsum",
   "postId": 2,
   "title": "qui est esse",
   "userId": 1,

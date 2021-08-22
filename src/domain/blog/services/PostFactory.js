@@ -4,9 +4,12 @@ class PostFactory {
     const postItem = {
       userId: apiData.userId,
       postId: apiData.id,
-      date: "20-01-2021",
+      date: apiData.date,
       title: apiData.title,
-      body: apiData.body
+      lead: apiData.lead,
+      body: apiData.body,
+      featuredImage: apiData.featuredImage,
+      images: apiData.images
     }
 
     return new Post(postItem)

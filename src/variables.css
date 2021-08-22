@@ -1,3 +1,32 @@
+/* Media queries */
+@custom-media --min-desktop (min-width: 1280px);
+@custom-media --min-tablet (min-width: 768px);
+
 :root {
-  --red: #ff0;
+  /* Fonts */
+  --main-font: Avenir;
+  --fallback-font: Helvetica, Arial, sans-serif;
+  --primary-font: var(--main-font, var(--fallback-font));
+
+  /* Transitions */
+  --main-easing: ease-in-out;
+  --main-transition: .2s var(--main-easing);
+
+  /* Medias */
+  --min-desktop: 1280px;
+  --min-tablet: 768px;
+
+  /* COLORS */
+  --background-color: #E2E0E0;
+
+  /* Neutrals */
+  --color-black: #000000;
+  --color-gray-dark: #191919;
+  --color-gray-medium: #737373;
+  /* --color-gray: #fff;
+  --color-gray-light: #fff;
+  --color-gray-x-light: #fff;
+  --color-gray-xx-light: #fff; */
+  --color-white: #FFFFFF;
+
 }
