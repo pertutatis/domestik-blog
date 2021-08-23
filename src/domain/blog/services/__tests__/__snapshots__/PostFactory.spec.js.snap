@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List Factory returns a List instance 1`] = `
+exports[`Post Factory returns a post instance 1`] = `
 Post {
   "body": "est rerum tempore vitae
 sequi sint nihil reprehenderit dolor beatae ea dolores neque

@@ -7,7 +7,7 @@ export const getPostDetail = (postId) => {
   const getPostUrl = API.blog.getPost.replace('${id}', postId) 
 
   // return HTTP('https://61217baaf5849d0017fb4246.mockapi.io' + getPostUrl) // not working :(
-  return HTTP('https://testapi.io/api/Pertutatis' + getPostUrl)
+  return HTTP(getPostUrl)
     .then(result => {
       return PostFactory.getPost(result)
     })

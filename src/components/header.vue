@@ -40,7 +40,6 @@ export default {
 <style scoped lang="postcss">
 @import "../variables.css";
 
-
 /* Header */
 .header {
   position: relative;

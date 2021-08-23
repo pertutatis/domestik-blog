@@ -1,5 +1,5 @@
 export const HTTP = (url) => {
-  return fetch(url)
+  return fetch('https://testapi.io/api/Pertutatis' + url)
   .then(response => response.body)
   .then(rb => {
     const reader = rb.getReader();

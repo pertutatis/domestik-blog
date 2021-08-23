@@ -1,7 +1,6 @@
 import Vuex from 'vuex'
 import { createLocalVue } from '@vue/test-utils'
 import blog from '../blog'
-// import {HTTP} from '../../../api/http'
 
 jest.mock('../../../api/http')
 
@@ -11,17 +10,21 @@ const mockedPost = {
   "date": "01-02-2021",
   "title": "qui est esse",
   "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
-  getReader: () => true
 };
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    body: mockedPost
-  })
-);
-
-global.ReadableStream = jest.fn((response) => response);
-global.Response = jest.fn((response) => response);
+const mockedPostList = [{
+  "userId": 1,
+  "id": 2,
+  "date": "01-02-2021",
+  "title": "qui est esse",
+  "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+},{
+  "userId": 1,
+  "id": 2,
+  "date": "01-02-2021",
+  "title": "qui est esse",
+  "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+}];
 
 describe('List module', () => {
   let store
@@ -44,5 +47,18 @@ describe('List module', () => {
     await store.dispatch('blog/fetchBlogPost')
 
     expect(store.commit).toHaveBeenCalledWith('blog/updatePost', expect.any(Object), undefined)
+  })
+
+  it('updates the post list state when "updatePostList" is commited', () => {
+    store.commit('blog/updatePostList', mockedPostList)
+
+    expect(store.state.blog.posts).toBe(mockedPostList)
+  })
+
+  it('fetchs and updates the post list state when "fetchBlogPost" is dispatched', async () => {
+    jest.spyOn(store, 'commit')
+    await store.dispatch('blog/fetchBlogList')
+
+    expect(store.commit).toHaveBeenCalledWith('blog/updatePostList', expect.any(Array), undefined)
   })
 })
